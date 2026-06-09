@@ -1,14 +1,17 @@
 package com.survivalcoding;
 
 public class Cleric {
-    final int MAX_HP = 50;
-    final int MAX_MP = 10;
+    static final int MAX_HP = 50;
+    static final int MAX_MP = 10;
 
     String name;
     int HP = MAX_HP;
     int MP = MAX_MP;
 
     void selfAid() {
+        if (HP < 5) {
+            return;
+        }
         MP -= 5;
         HP = MAX_HP;
     }
